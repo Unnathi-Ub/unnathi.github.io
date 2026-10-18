@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unnathi – Full Stack Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f7;--surface:#fff;--ink:#14213d;--muted:#51607a;--line:#d5ddea;--accent:#2f5bff;--accent-ink:#fff;--mint:#0f9d74;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1626;--surface:#16213a;--ink:#e8eefc;--muted:#9fb0cf;--line:#26345a;--accent:#7f9bff;--accent-ink:#0e1626;--mint:#3ddba8}}
+:root[data-theme="dark"]{--bg:#0e1626;--surface:#16213a;--ink:#e8eefc;--muted:#9fb0cf;--line:#26345a;--accent:#7f9bff;--accent-ink:#0e1626;--mint:#3ddba8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+nav b{font:800 22px "Bricolage Grotesque",sans-serif}
+nav div{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:48px 0 72px}
+.hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:800;letter-spacing:-.02em}
+.hero p{color:var(--muted);max-width:46ch;margin:22px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--accent);transition:transform .2s}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{color:var(--ink);border-color:var(--line)}
+.btn:hover{transform:translateY(-2px)}
+.browser{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 50px -24px rgba(20,33,61,.45);overflow:hidden;text-decoration:none;display:block;transform:rotate(1.5deg);transition:transform .25s}
+.browser:hover{transform:rotate(0)}
+.bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.bar span{margin-left:10px;flex:1;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:3px 12px;font-size:13px;color:var(--muted)}
+.screen{padding:30px 26px 34px}
+.screen small{color:var(--mint);font-weight:600}
+.screen h3{font-size:30px;margin:8px 0 16px}
+.screen .ln{height:9px;border-radius:5px;background:var(--line);margin:9px 0;width:86%}
+.screen .ln.a{width:64%}.screen .ln.b{width:75%}
+.screen em{display:inline-block;margin-top:18px;font-style:normal;font-weight:600;color:var(--accent)}
+section{padding:60px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 34px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+.panel h3{font-size:24px;margin-bottom:12px}
+.panel ul{margin:0;padding-left:20px;color:var(--muted)}
+.panel li{margin:6px 0}
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.card.feat{grid-column:1/-1;border-color:var(--accent);border-width:2px;flex-direction:row;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.card h3{font-size:22px}
+.card p{margin:0;color:var(--muted)}
+.tag{font-size:13px;font-weight:600;color:var(--mint)}
+.card a.lnk{font-weight:600;color:var(--accent)}
+.job{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.job:last-child{border:0}
+.job span{color:var(--muted);font-size:15px}
+.job b{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0}
+.chips li{list-style:none;padding:7px 15px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:15px}
+.contact h2{font-size:clamp(30px,4.4vw,52px)!important}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
+@media(max-width:780px){.hero,.two,.work{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:2px}nav div{gap:14px}.browser{transform:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Unnathi</b><div><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<div>
+<h1>I build websites that win customers, and the software behind them.</h1>
+<p>Full stack developer with 3+ years of experience. I design and launch business websites, web apps and AI automations, from first call to going live.</p>
+<div class="btns"><a class="btn p" href="https://pixeltouch.ai/" target="_blank" rel="noopener">See my latest website</a><a class="btn s" href="#contact">Hire me</a></div>
+</div>
+<a class="browser" href="https://pixeltouch.ai/" target="_blank" rel="noopener" aria-label="Open pixeltouch.ai">
+<div class="bar"><i></i><i></i><i></i><span>pixeltouch.ai</span></div>
+<div class="screen"><small>Latest client website</small><h3>PixelTouch</h3><div class="ln"></div><div class="ln a"></div><div class="ln b"></div><em>Visit the live site</em></div>
+</a>
+</header>
+</div>
+
+<section id="work"><div class="wrap">
+<h2>Selected work</h2>
+<p class="lead">Live websites you can open today, plus the apps and automations behind the scenes.</p>
+<div class="work">
+<div class="card feat"><div><span class="tag">Latest client website</span><h3>PixelTouch</h3><p>My most recent website for a client. Open it and see the finished result.</p></div><a class="btn p" href="https://pixeltouch.ai/" target="_blank" rel="noopener">Visit pixeltouch.ai</a></div>
+<div class="card"><span class="tag">Website</span><h3>TheTradeMates.com</h3><p>Responsive multi-page business website with a PHP contact form that emails enquiries straight to the owner.</p></div>
+<div class="card"><span class="tag">E-commerce backend</span><h3>Encash</h3><p>Backend services and faster product search for an online mobile and electronics store, built on Laravel.</p><a class="lnk" href="https://encashmobile.in" target="_blank" rel="noopener">Visit encashmobile.in</a></div>
+<div class="card"><span class="tag">Web app</span><h3>Real-time website calling</h3><p>Visitors talk to a receptionist by voice inside the browser. Built with WebRTC, Socket.IO and Node.js, with a dashboard for agents and call routing.</p></div>
+<div class="card"><span class="tag">AI automation</span><h3>Telegram bot</h3><p>A Python bot that handles user commands and decision-tree conversations, and automates messaging workflows.</p></div>
+<div class="card"><span class="tag">Business tools</span><h3>Internal HR and finance apps</h3><p>Hiring, referral, exit management and purchase approval tools built at Insemi Technology.</p></div>
+</div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<h2>How I can help</h2>
+<p class="lead">Most clients start with a website. Many then add automation once the basics are running.</p>
+<div class="two">
+<div class="panel"><h3>Websites and web apps</h3><ul><li>Business and portfolio websites</li><li>Responsive design for phone and desktop</li><li>Contact forms, email and API integrations</li><li>Laravel and PHP backends with fast MySQL databases</li><li>Launch and fixes after launch</li></ul></div>
+<div class="panel"><h3>AI and automation</h3><ul><li>AI features added to your existing site or app</li><li>Chatbots and Telegram bots</li><li>Workflows that save repeated manual work</li><li>OpenAI and Anthropic API integration</li><li>Real-time voice and messaging features</li></ul></div>
+</div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<h2>Experience and skills</h2>
+<div style="margin:26px 0 34px">
+<div class="job"><span>Jan 2025 to now</span><div><b>Freelance Full Stack Developer</b>Websites, backend integrations and AI-powered features for clients. I handle requirements, design, development, testing and deployment.</div></div>
+<div class="job"><span>Dec 2023 to Feb 2024</span><div><b>Backend Developer, Nifix Technology</b>Sped up Laravel applications and built REST APIs for the frontend team.</div></div>
+<div class="job"><span>Feb 2022 to Jun 2023</span><div><b>Full Stack Developer, Insemi Technology</b>Built internal web apps and workflow tools with PHP, JavaScript and MySQL.</div></div>
+<div class="job"><span>2021</span><div><b>B.Tech in Computer Science</b>NMAM Institute of Technology, Nitte</div></div>
+</div>
+<ul class="chips"><li>PHP</li><li>Laravel</li><li>JavaScript</li><li>Node.js</li><li>Express.js</li><li>Python</li><li>MySQL</li><li>HTML5 and CSS3</li><li>Bootstrap</li><li>jQuery</li><li>REST APIs</li><li>WebRTC</li><li>Socket.IO</li><li>LLM APIs</li><li>Cursor AI</li><li>GitHub</li></ul>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Need a website or an automation built?</h2>
+<p class="lead">Tell me what your business needs and I will reply with a plan and a quote.</p>
+<div class="btns"><a class="btn p" href="mailto:unnathiumeshbhandary123@gmail.com">unnathiumeshbhandary123@gmail.com</a><a class="btn s" href="https://www.linkedin.com/in/unnathi-bhandary-35bb481b0/" target="_blank" rel="noopener">LinkedIn</a></div>
+</div></section>
+<div class="wrap"><footer>© 2026 Unnathi. Full stack developer.</footer></div>
+</body>
+</html>
